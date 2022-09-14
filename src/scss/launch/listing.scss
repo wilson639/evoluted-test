@@ -1,0 +1,8 @@
+.launch-list {
+  display: flex;
+  flex-flow: row wrap;
+
+  .launch-item {
+    padding: 40px;
+  }
+}

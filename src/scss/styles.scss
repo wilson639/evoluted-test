@@ -4,8 +4,10 @@
 // Utilities
 @import "~bootstrap/scss/utilities/api";
 
-// Basic temp styles
-body {
-  background-color: #000;
-  color: #fff;
-}
+// Basic Setup
+@import "./setup/fonts.scss";
+@import "./setup/variables.scss";
+@import "./setup/layout.scss";
+
+// Launch Styles
+@import "./launch/listing.scss";
