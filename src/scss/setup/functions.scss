@@ -1,0 +1,4 @@
+// Return em value from given px (better for browser zoom)
+@function em($size, $base-font-size: 18px) {
+    @return calc($size / $base-font-size) * 1em;
+}

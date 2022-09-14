@@ -2,11 +2,12 @@
 @import "~bootstrap/scss/bootstrap";
 
 // Utilities
-@import "~bootstrap/scss/utilities/api";
+// @import "~bootstrap/scss/utilities/api";
 
 // Basic Setup
 @import "./setup/fonts.scss";
 @import "./setup/variables.scss";
+@import "./setup/functions.scss";
 @import "./setup/layout.scss";
 
 // Launch Styles
