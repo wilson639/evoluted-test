@@ -1,5 +1,4 @@
 import { Launch } from './Launch.js';
-import { Rocket } from './Rocket.js';
 
 const spacexApiUrl = "https://api.spacexdata.com/v4";
 
@@ -7,26 +6,26 @@ const getAllLaunches = async () => {
   let response = await fetch(spacexApiUrl + '/launches');
   let json = await response.json();
 
-  let launches = [];
+  const launches = [];
 
   json.forEach(launch => {
     launches.push(new Launch(launch))
   })
 
-  return launches
+  return launches;
 }
 
 const getAllRockets = async () => {
   let response = await fetch(spacexApiUrl + '/rockets');
   let json = await response.json();
 
-  let rockets = [];
+  const rockets = {};
 
   json.forEach(rocket => {
-    rockets.push(new Rocket(rocket))
+    rockets[rocket.id] = rocket.name;
   })
 
-  return rockets
+  return rockets;
 }
 
 export { getAllLaunches, getAllRockets }
