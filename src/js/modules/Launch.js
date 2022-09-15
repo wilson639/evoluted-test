@@ -8,6 +8,11 @@ export class Launch {
     this.rocketId = details.rocket;
   }
 
+  getYear() {
+    // Return just the year from the date
+    return new Date(this.date).getFullYear();
+  }
+
   getConvertedDate() {
     // Convert date from ISO format
     let convertedDate = new Date(this.date);
@@ -16,11 +21,11 @@ export class Launch {
 
   getImage() {
     // If no image is provided, use a placeholder image
-    return (this.imageSrc != undefined) ? this.imageSrc : 'placeholder.png' 
+    return (this.imageSrc != undefined) ? this.imageSrc : 'placeholder.png';
   }
 
   getDescription() {
     // If no description is provided, display a standard message
-    return (this.description != null) ? this.description : 'No description available.' 
+    return (this.description != null) ? this.description : 'No description available.';
   }
 }

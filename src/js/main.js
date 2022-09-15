@@ -6,12 +6,14 @@ import '../scss/styles.scss';
 
 import { getAllLaunches, getAllRockets } from './modules/Utils';
 import { printLaunches } from './modules/PrintLaunches';
+import { SortLaunches } from './modules/SortLaunches';
 
 const StartApp = async () => {
   let launches = await getAllLaunches();
   let rockets = await getAllRockets();
   
   printLaunches(launches, rockets);
+  new SortLaunches(launches, rockets);
 }
 
 StartApp();

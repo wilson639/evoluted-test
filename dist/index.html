@@ -8,7 +8,19 @@
   <body>
     <div class="container">
       <h1>Evoluted Test</h1>
-      <ul id="launch-info" class="d-flex flex-row flex-wrap"></ul>
+
+      <div class="row mx-auto mb-5">
+        <div class="col-sm-4">        
+          <select id="launch-select" aria-label="Sort launch list" disabled>
+            <option selected>All</option>  
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <ul id="launch-info" class="d-flex flex-row flex-wrap"></ul>
+      </div>
+
     </div>
     <script src="./main.js"></script>
   </body>

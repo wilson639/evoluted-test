@@ -1,8 +1,10 @@
-const printLaunches = (launches, rockets) => {
+const printLaunches = (launches, rockets, reset = false) => {
+  if (reset) document.getElementById("launch-info").innerHTML = '';
+  
   launches.forEach(launch => {
 
     const rocketName = rockets[launch.rocketId]
-  
+
     document.getElementById("launch-info").innerHTML +=
     `<li class="launch-item col-12 col-md-6">
         <div class="launch-image-container">
