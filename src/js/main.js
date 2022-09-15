@@ -4,16 +4,15 @@ import '../scss/styles.scss';
 // Import only the Bootstrap components we need
 // import * as bootstrap from 'bootstrap';
 
-import { getAllLaunches, getAllRockets } from './modules/Utils';
+import { getLaunchInfo } from './modules/Utils';
 import { printLaunches } from './modules/PrintLaunches';
 import { SortLaunches } from './modules/SortLaunches';
 
 const StartApp = async () => {
-  let launches = await getAllLaunches();
-  let rockets = await getAllRockets();
+  const launches = await getLaunchInfo();
   
-  printLaunches(launches, rockets);
-  new SortLaunches(launches, rockets);
+  printLaunches(launches);
+  new SortLaunches(launches);
 }
 
 StartApp();

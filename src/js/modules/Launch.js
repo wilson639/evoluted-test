@@ -1,11 +1,12 @@
 export class Launch {
-  constructor(details) {
+  constructor(details, rocketName) {
     this.date = details.date_utc;
     this.name = details.name;
     this.success = details.success;
     this.imageSrc = details.links.flickr.original.slice(-1)[0];
     this.description = details.details;
     this.rocketId = details.rocket;
+    this.rocketName = rocketName;
   }
 
   getYear() {

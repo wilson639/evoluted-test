@@ -6,13 +6,7 @@ const getAllLaunches = async () => {
   let response = await fetch(spacexApiUrl + '/launches');
   let json = await response.json();
 
-  const launches = [];
-
-  json.forEach(launch => {
-    launches.push(new Launch(launch))
-  })
-
-  return launches;
+  return json;
 }
 
 const getAllRockets = async () => {
@@ -28,4 +22,17 @@ const getAllRockets = async () => {
   return rockets;
 }
 
-export { getAllLaunches, getAllRockets }
+const getLaunchInfo = async () => {
+  let launch_json = await getAllLaunches();
+  const rockets = await getAllRockets();
+
+  let launches = [];
+
+  launch_json.forEach(launch => {
+    launches.push(new Launch(launch, rockets[launch.rocket]))
+  })
+
+  return launches;
+}
+
+export { getLaunchInfo }

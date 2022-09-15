@@ -1,8 +1,7 @@
 import { printLaunches } from "./PrintLaunches";
 
 export class SortLaunches {
-  constructor(launches, rockets) {
-    this.rockets = rockets;
+  constructor(launches) {
     this.launches = launches;
     this.selectFilter = document.getElementById('launch-select');
 
@@ -35,7 +34,7 @@ export class SortLaunches {
       }
     
       // Print new list of launches, third parameter (true) is to clear existing
-      printLaunches(sortedLaunches, this.rockets, true);
+      printLaunches(sortedLaunches, true);
     }
   }
 }
