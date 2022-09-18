@@ -1,4 +1,5 @@
-const path = require('path')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -49,6 +50,19 @@ module.exports = {
         test: /\.(png)$/i,
         type: 'asset/resource',
       },
+      {
+        // Parse HTML so we can inject images
+        test: /\.html$/i,
+        use: 'html-loader'
+      }
     ]
-  }
+  },
+  // Includes html in bundle
+  plugins: [
+    new HtmlWebpackPlugin({
+        template: 'src/index.html',
+        filename: 'index.html',
+        inject: 'body'
+    })
+],
 }
