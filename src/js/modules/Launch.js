@@ -1,3 +1,5 @@
+import placeholderImage from '../../img/placeholder.png'
+
 export class Launch {
   constructor(details, rocketName) {
     this.date = details.date_utc;
@@ -22,7 +24,7 @@ export class Launch {
 
   getImage() {
     // If no image is provided, use a placeholder image
-    return (this.imageSrc != undefined) ? this.imageSrc : 'placeholder.png';
+    return (this.imageSrc != undefined) ? this.imageSrc : placeholderImage;
   }
 
   getDescription() {

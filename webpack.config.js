@@ -43,7 +43,12 @@ module.exports = {
             loader: 'sass-loader'
           }
         ]
-      }
+      },
+      {
+        // Compile assets
+        test: /\.(png)$/i,
+        type: 'asset/resource',
+      },
     ]
   }
 }
