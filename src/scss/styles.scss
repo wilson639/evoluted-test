@@ -10,5 +10,8 @@
 @import "./setup/functions.scss";
 @import "./setup/layout.scss";
 
+// Shared Styles
+@import "./shared/hero_banner.scss";
+
 // Launch Styles
 @import "./launch/listing.scss";

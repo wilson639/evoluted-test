@@ -1,0 +1,64 @@
+.hero-banner {
+  height: 400px;
+  position: relative;
+
+  &::after {
+    background-color: $bunker-black;
+    content: "";
+    height: 100%;    
+    inset: 0;
+    opacity: .4;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.hero-banner-logo {
+  height: auto;
+  width: 200px;
+}   
+
+.hero-banner-img {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  width: 100%;
+}
+
+.hero-banner-text {
+  position: relative;
+  z-index: 2;
+
+  h1 {
+    font-family: $medium-font-stack;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .hero-banner-logo {
+    width: 350px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .hero-banner {
+    height: 600px;
+  }
+
+  .hero-banner-logo {
+    width: 400px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .hero-banner {
+    height: 800px;
+  }
+
+  .hero-banner-logo {
+    width: 500px;
+  }   
+}

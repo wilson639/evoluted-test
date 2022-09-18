@@ -6,20 +6,34 @@
     <title>Evoluted Test</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Evoluted Test</h1>
-      <div class="row d-flex justify-content-center mb-5">
+
+    <section class="hero-banner mb-4 mb-md-5">
+      <img src="/src/img/banner.png" alt="SpaceX launch" class="hero-banner-img"/>
+      <div class="hero-banner-text h-100 d-flex justify-content-center align-items-center">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <img src="/src/img/spacex.svg" alt="SpaceX logo" class="hero-banner-logo mx-auto my-3 my-sm-4"/>
+              <h1 class="h2 text-center mb-0">Launch Manifest</h1>
+            </div>  
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="row d-flex justify-content-center mb-4 mb-md-5">
         <div class="col-md-4">        
-          <select id="launch-select" class="form-select form-select-lg" aria-label="select launch year" disabled>
+          <select id="launch-select" class="form-select form-select-lg" aria-label="Select launch year" disabled>
             <option selected>All</option>  
           </select>
         </div>
       </div>
-
       <div class="row">
         <ul id="launch-info" class="d-flex flex-row flex-wrap"></ul>
       </div>
+    </section>
 
-    </div>
   </body>
 </html>
