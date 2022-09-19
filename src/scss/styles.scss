@@ -9,9 +9,12 @@
 @import "./setup/variables.scss";
 @import "./setup/functions.scss";
 @import "./setup/layout.scss";
+@import "./setup/links.scss";
 
 // Shared Styles
 @import "./shared/hero_banner.scss";
+@import "./shared/footer.scss";
+
 
 // Launch Styles
 @import "./launch/listing.scss";

@@ -1,0 +1,12 @@
+a {
+  color: $electric-violet;
+  border-bottom: 2px solid $electric-violet;
+  text-decoration: none !important;
+  transition-property: border-color, color;
+  transition-duration: 200ms;
+
+  &:hover, &:focus {
+    color: $gumbo-green;
+    border-color: $gumbo-green;
+  } 
+}
