@@ -18,8 +18,7 @@ export class Launch {
 
   getConvertedDate() {
     // Convert date from ISO format
-    let convertedDate = new Date(this.date);
-    return convertedDate.toString('dd-MM-YYYY').slice(3, 16);
+    return new Date(this.date).toString('dd-MM-YYYY').slice(3, 16);
   }
 
   getImage() {
@@ -30,5 +29,11 @@ export class Launch {
   getDescription() {
     // If no description is provided, display a standard message
     return (this.description != null) ? this.description : 'No description available.';
+  }
+
+  getSuccess() {
+    // Convert 'success' to string and return capitalized 
+    const successString = String(this.success);
+    return `${successString[0].toUpperCase()}${successString.slice(1)}`;
   }
 }
