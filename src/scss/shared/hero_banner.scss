@@ -2,15 +2,22 @@
   height: 400px;
   position: relative;
 
-  &::after {
-    background-color: $bunker-black;
+  &::after, &::before {
     content: "";
     height: 100%;    
     inset: 0;
-    opacity: .4;
     position: absolute;
-    width: 100%;
     z-index: 1;
+    width: 100%;
+  }
+
+  &::before {
+    background-color: $bunker-black;
+    opacity: .4;
+  }
+
+  &::after {
+    background: linear-gradient(to top, $reg-violet, transparent)
   }
 }
 
