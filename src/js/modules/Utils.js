@@ -1,38 +1,35 @@
-import { Launch } from './Launch.js';
+import { Launch } from './Launch';
 
-const spacexApiUrl = "https://api.spacexdata.com/v4";
+const spacexApiUrl = "https://api.spacexdata.com/v4/";
 
-const getAllLaunches = async () => {
-  let response = await fetch(spacexApiUrl + '/launches');
+const apiPromise = async (query = '') => {
+  let response = await fetch(spacexApiUrl + query);
   let json = await response.json();
 
   return json;
 }
 
-const getAllRockets = async () => {
-  let response = await fetch(spacexApiUrl + '/rockets');
-  let json = await response.json();
-
-  const rockets = {};
-
-  json.forEach(rocket => {
-    rockets[rocket.id] = rocket.name;
-  })
-
-  return rockets;
-}
-
-const getLaunchInfo = async () => {
-  let launch_json = await getAllLaunches();
-  const rockets = await getAllRockets();
-
+const getLaunchInformation = async () => {
+  let rockets = {};
   let launches = [];
 
-  launch_json.forEach(launch => {
-    launches.push(new Launch(launch, rockets[launch.rocket]))
-  })
+  await Promise.all([apiPromise('rockets'), apiPromise('launches')])
+    .then(data => {
+      // Create dictionary of rockets and create array of launches
+      data[0].forEach(rocket => {
+        rockets[rocket.id] = rocket.name;
+      })
 
+      data[1].forEach(launch => {
+        launches.push(new Launch(launch, rockets[launch.rocket]))
+      })
+    })
+    .catch(errors => {
+      /* Handle Errors */
+      console.log('Errors: ' + errors)
+    });
+    
   return launches;
 }
 
-export { getLaunchInfo }
+export { getLaunchInformation }
